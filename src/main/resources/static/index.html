@@ -4,8 +4,65 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>DATA1700 Oblig 1</title>
+
+    <script src="script.js"></script>
 	</head>
 	<body>
 		<h1>Bestilling av kinobiletter</h1>
+    <div>
+      <label for="movie">Velg film</label>
+      <select name="movie" id="movie">
+        <option value="Swept Away (2002)">Swept Away (2002)</option>
+        <option value="Freddy Got Fingered (2001)">
+          Freddy Got Fingered (2001)
+        </option>
+        <option value="Titanic: The Legend Goes On (2000)">
+          Titanic: The Legend Goes On (2000)
+        </option>
+      </select>
+    </div>
+    <div style="margin-top: 1rem;">
+      <label for="amount">Antall</label>
+      <input type="number" id="amount" name="amount" />
+    </div>
+    <div
+      style="margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr 1fr; width: max-content;"
+    >
+      <!-- Fornavn -->
+      <label for="fornavn">Fornavn</label>
+      <input id="fornavn" name="fornavn"></input>
+      <div style="color: red;"><span id="fornavn_erroor"></span></div>
+
+      <!-- Etternavn -->
+      <label for="etternavn">Etternavn</label>
+      <input id="etternavn" name="etternavn"></input>
+      <div style="color: red;"><span id="etternavn_error"></span></div>
+
+      <!-- Telefonnr -->
+      <label for="tlf">Telefonnr</label>
+      <input id="tlf" name="tlf"></input>
+      <div style="color: red;"><span id="tlf_error"></span></div>
+
+      <!-- Email -->
+      <label for="e-post" >Epost</label>
+      <input id="e-post" name="e-post"></input>
+      <div style="color: red;"><span id="e-post_error"></span></div>
+    </div>
+    <button id="kjopBillett">Kjøp billett</button>
+    <h2>Alle billetter</h2>
+    <table id="tabell">
+      <thead>
+        <tr>
+          <th>Film</th>
+          <th>Antall</th>
+          <th>Fornavn</th>
+          <th>Etternavn</th>
+          <th>Telefonnr</th>
+          <th>Epost</th>
+        </tr>
+      </thead>
+      <tbody id="tabellinnhold"></tbody>
+    </table>
+    <button id="slettAlle">Slett alle billettene</button>
 	</body>
 </html>
