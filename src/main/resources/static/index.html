@@ -4,65 +4,84 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>DATA1700 Oblig 1</title>
-
-    <script src="script.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<script src="script.js"></script>
 	</head>
-	<body>
-		<h1>Bestilling av kinobiletter</h1>
-    <div>
-      <label for="movie">Velg film</label>
-      <select name="movie" id="movie">
-        <option value="Swept Away (2002)">Swept Away (2002)</option>
-        <option value="Freddy Got Fingered (2001)">
-          Freddy Got Fingered (2001)
-        </option>
-        <option value="Titanic: The Legend Goes On (2000)">
-          Titanic: The Legend Goes On (2000)
-        </option>
-      </select>
-    </div>
-    <div style="margin-top: 1rem;">
-      <label for="amount">Antall</label>
-      <input type="number" id="amount" name="amount" />
-    </div>
-    <div
-      style="margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr 1fr; width: max-content;"
-    >
-      <!-- Fornavn -->
-      <label for="fornavn">Fornavn</label>
-      <input id="fornavn" name="fornavn"></input>
-      <div style="color: red;"><span id="fornavn_erroor"></span></div>
-
-      <!-- Etternavn -->
-      <label for="etternavn">Etternavn</label>
-      <input id="etternavn" name="etternavn"></input>
-      <div style="color: red;"><span id="etternavn_error"></span></div>
-
-      <!-- Telefonnr -->
-      <label for="tlf">Telefonnr</label>
-      <input id="tlf" name="tlf"></input>
-      <div style="color: red;"><span id="tlf_error"></span></div>
-
-      <!-- Email -->
-      <label for="e-post" >Epost</label>
-      <input id="e-post" name="e-post"></input>
-      <div style="color: red;"><span id="e-post_error"></span></div>
-    </div>
-    <button id="kjopBillett">Kjøp billett</button>
-    <h2>Alle billetter</h2>
-    <table id="tabell">
-      <thead>
-        <tr>
-          <th>Film</th>
-          <th>Antall</th>
-          <th>Fornavn</th>
-          <th>Etternavn</th>
-          <th>Telefonnr</th>
-          <th>Epost</th>
-        </tr>
-      </thead>
-      <tbody id="tabellinnhold"></tbody>
-    </table>
-    <button id="slettAlle">Slett alle billettene</button>
+	<body class="container mt-5">
+		<h1 class="mb-4">Bestilling av kinobiletter</h1>
+		<form>
+			<div class="form-group">
+				<label for="movie">Velg film</label>
+				<select class="form-control" name="movie" id="movie">
+					<option value="Swept Away (2002)">Swept Away (2002)</option>
+					<option value="Freddy Got Fingered (2001)">
+						Freddy Got Fingered (2001)
+					</option>
+					<option value="Titanic: The Legend Goes On (2000)">
+						Titanic: The Legend Goes On (2000)
+					</option>
+				</select>
+				<div class="invalid-feedback" id="movie_error"></div>
+			</div>
+			<div class="form-group">
+				<label for="amount">Antall</label>
+				<input type="number" class="form-control" id="amount" name="amount" />
+				<div class="invalid-feedback" id="amount_error"></div>
+			</div>
+			<div class="form-row">
+				<div class="col-md-6 mb-3">
+					<label for="fornavn">Fornavn</label>
+					<input type="text" class="form-control" id="fornavn" name="fornavn" />
+					<div class="invalid-feedback" id="fornavn_error"></div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="etternavn">Etternavn</label>
+					<input
+						type="text"
+						class="form-control"
+						id="etternavn"
+						name="etternavn"
+					/>
+					<div class="invalid-feedback" id="etternavn_error"></div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col-md-6 mb-3">
+					<label for="tlf">Telefonnr</label>
+					<input type="tel" class="form-control" id="tlf" name="tlf" />
+					<div class="invalid-feedback" id="tlf_error"></div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="e-post">Epost</label>
+					<input type="email" class="form-control" id="e-post" name="e-post" />
+					<div class="invalid-feedback" id="e-post_error"></div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary" id="kjopBillett">
+				Kjøp billett
+			</button>
+		</form>
+		<h2 class="mt-5">Alle billetter</h2>
+		<table class="table" id="tabell">
+			<thead class="thead-dark">
+				<tr>
+					<th>Film</th>
+					<th>Antall</th>
+					<th>Fornavn</th>
+					<th>Etternavn</th>
+					<th>Telefonnr</th>
+					<th>Epost</th>
+				</tr>
+			</thead>
+			<tbody id="tabellinnhold"></tbody>
+		</table>
+		<button type="button" class="btn btn-danger" id="slettAlle">
+			Slett alle billettene
+		</button>
 	</body>
 </html>
